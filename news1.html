@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الخبر</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Kora Online</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <article>
+            <h2>فوز برشلونة على ريال مدريد</h2>
+            <p>حقق برشلونة فوزًا كبيرًا على ريال مدريد في الكلاسيكو بنتيجة 3-1...</p>
+        </article>
+
+        <!-- قسم التعليقات -->
+        <section id="comments-section">
+            <h3>التعليقات</h3>
+            <ul id="comments-list">
+                <!-- التعليقات ستظهر هنا -->
+            </ul>
+            <textarea id="comment-input" placeholder="اكتب تعليقك..."></textarea>
+            <button onclick="addComment()">إرسال</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2025 Kora Online</p>
+    </footer>
+
+    <script>
+        function addComment() {
+            const input = document.getElementById("comment-input");
+            const list = document.getElementById("comments-list");
+
+            if (input.value.trim() !== "") {
+                const comment = document.createElement("li");
+                comment.textContent = input.value;
+                list.appendChild(comment);
+                input.value = ""; // مسح المدخل بعد الإرسال
+            }
+        }
+    </script>
+</body>
+</html>
